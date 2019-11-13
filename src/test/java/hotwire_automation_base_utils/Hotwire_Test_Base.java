@@ -18,12 +18,11 @@ public class Hotwire_Test_Base {
 	 
 	 @BeforeSuite
 	 public void initialize() throws IOException{
-	 
-		  System.setProperty("webdriver.chrome.driver", "C:\\Workspace_cp\\Flipkart_Test_Automation\\chromedriver.exe");
+		   String Chromepath = System.getProperty("user.dir");
+		   System.setProperty("webdriver.chrome.driver",Chromepath + "/chromedriver");
 		   driver = new ChromeDriver();
 		   driver.manage().window().maximize();
 	       driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	       driver.manage().window().maximize();
 	       driver.get("https://www.hotwire.com/");
 	       homepage= PageFactory.initElements(driver, Hotwire_serach_page.class);
 	      

@@ -44,7 +44,7 @@ public class Search_Test_Cases extends Hotwire_Test_Base
 	 assertTrue(homepage.getFindadeal().isEnabled());
 	 homepage.ClickOnFindadeal();
 	 Thread.sleep(3000);
-	 WebElement myDynamicElement = (new WebDriverWait(driver, 10))
+	 WebElement myDynamicElement = (new WebDriverWait(driver, 60))
 	         .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@class='btn-sort tab selected']")));
 	 List<WebElement> searchresults = driver.findElements(By.xpath("//div[@id='resultsContainer']/section/article")); 
 	 Assert.assertTrue("Search result is present", searchresults.get(1).isDisplayed()); 
